@@ -1,0 +1,133 @@
+body, html {
+	height: 100%;
+	min-height: 0;
+	width: 100%;
+	min-width: 0;
+}
+
+body
+{
+	margin:0px;
+	padding:0;
+	font-family: $body-font;
+	font-size:16px;
+	color: $default_text_color;
+	font-weight: 400;
+	line-height:23px;
+	overflow: hidden;
+	overflow-y: auto;
+	
+	text-rendering: optimizeLegibility; 
+	-webkit-font-smoothing: antialiased;
+
+	
+    @media screen and (max-width: 767px) {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        /* prevent overscroll bounce*/
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    @include flexboxv2();
+    @include justify-contentv2(column);
+    @include align-itemsv2(center);
+}
+
+::selection {
+	background: rgba($primary_color, 0.14);
+	color: rgba($black, 0.86);
+}
+::-moz-selection {
+	background: rgba($primary_color, 0.14); 
+	color: rgba($black, 0.86);
+}
+a:focus, input:focus, textarea:focus, button:focus
+{
+	outline:none;
+	text-decoration:none;
+}
+h1, h2, h3, h4, h5, h6 
+{	
+	font-weight: 200;
+	-webkit-font-smoothing: antialiased;
+}
+h2
+{
+	font-size:26px;
+	line-height:36px;
+	margin:0 0 15px 0;
+}
+h3
+{
+	font-size:22px;
+	margin:0 0 15px 0;
+}
+a
+{
+	color:$primary_color;
+	text-decoration:none;
+	
+	@include transitionAll(color ease 0.2s);
+}
+a:hover
+{
+	text-decoration:none;
+	color:lighten($primary_color, 10%);
+}
+label
+{
+	font-weight:normal;
+}
+p{
+	margin:0 0 15px 0;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ol
+{
+	padding:0px;
+	list-style-position:inside;
+}
+ol, li
+{
+	margin-bottom:0px;
+	list-style:none;
+	position:relative;
+}
+li
+{
+	
+}
+.app-l-svg--responsive{
+	width:100%;
+	max-width: 100%;
+	height: auto;
+}
+/*
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ *
+ * [1] IE9
+ * [2] IE10+
+ */
+/* 1 */
+.ie9 img[src$=".svg"] {
+  width: 100%; 
+}
+/* 2 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%;  
+  }
+}
+

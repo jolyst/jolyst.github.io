@@ -1,0 +1,266 @@
+
+
+.app-c-btn {
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    font-weight: 500;
+    color: #4f3f43;
+    padding: 6px 24px;
+    font-size: 12px;
+    line-height: 18px;
+    outline: none;
+    font-family: $body-font;
+    max-width: 100%;
+    min-width: 0;
+
+    @include transition(background ease 0.3s, color ease 0.3s, border ease 0.3s, box-shadow ease 0.3s);
+    @include inline-flexv2();
+    @include align-itemsv2(center);
+    @include border-radius-all(3px);
+    @include truncate();
+
+    +.app-c-btn {
+        margin-left: 8px;
+    }
+
+    &:hover{
+        text-decoration: none;
+        outline: none;
+    }
+
+    &:active, &.active {
+        outline: 0;
+        background-image: none; // @include boxShadow(inset 0 3px 5px rgba(0,0,0,.125));
+
+        @include noShadow();
+    }
+
+    &:focus {
+        @include noShadow();
+    }
+
+    &.disabled, &[disabled], fieldset[disabled] & {
+        cursor: $cursor-disabled;
+        opacity: 0.6;
+        pointer-events: none;
+
+        @include boxShadow(none);
+
+        &:hover, &.hover {
+            @include boxShadow(none);
+        }
+    }
+}
+
+
+.app-c-btn--primary {
+    background: $app-brand-primary;
+    border-color: $app-brand-primary;
+    color: $white;
+    min-width: 80px;
+
+    @include justify-contentv2(center);
+
+    &:hover, &:active, &:focus {
+        background: $app-brand-primary-dark;
+        border-color: $app-brand-primary-dark;
+        outline: none;
+    }
+
+    &[disabled]{
+        background: $app-brand-primary-disable;
+        border-color: $app-brand-primary-disable;
+        color: $text-dark-normal;
+    }
+}
+
+.app-c-btn--secondary {
+    background: $app-brand-secondary;
+    border-color: $app-brand-primary;
+    color: $app-brand-primary;
+    min-width: 80px;
+
+    @include justify-contentv2(center);
+
+    &:hover, &:active, &:focus  {
+        outline: none;
+        background: $app-brand-primary-disable;
+    }
+
+    &[disabled]{
+        color: #9D999A;
+        background: $neutrals-color4;
+        border-color: $secondary-btn-disabled;
+        // border-color: lighten(desaturate($app-brand-primary, 61.41), 65.49);
+    }
+}
+
+.app-c-btn--teritary{
+    background: $teritary-color;
+    color: $white;
+
+    @include transitionAll(background 0.3s ease-in-out);
+
+    &:hover, &:focus{
+        background: darken($teritary-color, 10%);
+    }
+}
+
+.app-l-floating-btn {
+
+    outline: none;
+    cursor: pointer;
+    background-position: center;
+
+    @include transitionAll(background 0.4s linear, box-shadow 0.3s ease-in-out);
+
+    &:hover {
+        @include boxShadow(0px 1px 6px 2px rgba(0, 0, 0, 0.4));
+    }
+    
+    &.app-c-btn--primary {
+        border: solid 1px $primary_color;
+        @include inline-flexv2();
+
+        &:hover {
+            background: lighten($color: $primary_color, $amount: 5%) radial-gradient(circle, transparent 1%, $primary_color 1%) center/15000%;
+        }
+        &:active {
+            background-color: lighten($color: $primary_color, $amount: 10%);
+            background-size: 100%;
+
+            @include transitionAll(background 0s linear);
+        }
+    }
+
+    &.app-l-floating-icon-btn {
+        width: 54px;
+        height: 54px;
+
+        @include inline-flexv2();
+        @include justify-contentv2(center);
+        @include align-itemsv2(center);
+        @include border-radius-all(50%);
+
+        i {
+            font-size: 19px;
+            color: $white;
+        }
+    }
+}
+
+.app-c-bnt--icon{
+    color: $primary_color;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: none;
+    padding: 3px;
+
+    @include flexboxv2();
+    @include align-itemsv2(center);
+
+    &:hover{
+        color: lighten($primary_color, 10%);
+    }
+}
+
+.app-c-btn--icon{
+    width: 30px;
+    height: 30px;
+    background: $white;
+    color: $text-dark-medium;
+    padding: 0;
+    font-size: 16px;
+    outline: none;
+
+    @include border-radius-all(3px);
+    @include inline-flexv2();
+    @include align-itemsv2(center);
+    @include justify-contentv2(center);
+    
+    &:hover{    
+        outline: none;
+        background: $neutrals-color3;
+    }
+    &:focus, &:active{
+        outline: none;
+        background: $neutrals-color2;
+        color: $white;
+    }
+
+    &.app-c-btn--icon-primary{
+        background: $app-brand-primary;
+        border-color: $app-brand-primary;
+        color: $white;
+
+        &:hover{
+            background: $primary-btn-hover;
+            // background: lighten($app-brand-primary, 8%);
+            border-color: $primary-btn-hover;
+            // border-color: lighten($app-brand-primary, 8%);
+            outline: none;
+        }
+    
+        &:active, &:focus {
+            background: $primary-btn-active-focus;
+            // background: lighten($app-brand-primary, 12%);
+            border-color: $primary-btn-active-focus;
+            // border-color: lighten($app-brand-primary, 12%);
+        }
+        &[disabled]{
+            background: $primary-btn-disabled;
+            // background: lighten($app-brand-primary, 16%);
+            border-color: $primary-btn-disabled;
+            // border-color: lighten($app-brand-primary, 16%);
+        }
+    }
+
+    &.app-c-btn--icon-border{
+        background: $white;
+        border: $generic-border-color 1px solid;
+        color: $text-color-light;
+
+        @include border-radius-all(3px);
+
+        &:hover{
+            outline: none;
+            border-color: $app-brand-primary;
+            background: $app-brand-primary;
+            color: $white;
+        }
+        &:focus, &:active{
+            border-color: $app-brand-primary-dark;
+            color: $white;
+            background: $app-brand-primary-dark;
+        }
+    }
+
+
+    &.app-c-btn--icon-static {
+        background: $white;
+        border: $generic-border-color 1px solid;
+        color: $text-color-light;
+
+        @include border-radius-all(3px);
+
+        &:focus, &:active{
+            border-color: $app-brand-primary-dark;
+            color: $white;
+            background: $app-brand-primary-dark;
+        }
+        &.selected {
+            border-color: $app-brand-primary-dark;
+            color: $white;
+            background: $app-brand-primary-dark;
+        }
+    }
+
+    &.overflow-visible {
+        overflow: visible;
+    }
+}

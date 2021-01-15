@@ -1,0 +1,238 @@
+.app-l-header{
+    background: $white;  
+    padding: 15px 26px 15px; 
+
+    @include flexboxv2();
+    @include align-itemsv2(center);
+    @include flex-shrinkv2(0);
+
+    .app-l-logo{ 
+        margin: 0 50px 0 0;
+        padding: 0;
+        line-height: normal;
+        max-width: 170px; 
+
+        @media screen and(max-width: 1300px){
+            max-width: 120px;
+        }
+
+        @media screen and(max-width: 1300px){
+            max-width: 80px;
+        }
+
+        a{
+            display: block;
+            cursor: pointer;
+
+            img{
+                display: block; 
+            }
+        }
+    }
+    .app-l-subnav{
+        @media screen and(max-width: 1200px){
+            display: none;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+
+            @include flexboxv2();
+            @include align-itemsv2(center);
+
+            li{
+                position: relative;
+
+                a{
+                    display: inline-block;
+                    line-height: normal;
+                    color: #999999;
+                    font-size: 14px;
+
+                    @include transition(color ease 0.2s);
+
+                    &:hover{
+                        color: $black;
+                    }
+                }
+
+                + li{
+                    padding-left: 15px;
+                    margin-left: 15px;
+
+                    &:before{
+                        content: '|';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: #999999;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .app-l-show-date{
+        margin-left: auto;
+        color: #999999;
+        font-size: 14px;
+        margin-right: 25px;
+        padding-left: 15px;
+
+        @media screen and(max-width: 1200px){
+            display: none;
+        }
+
+        span{
+            color: #000000;
+            font-weight: 700;
+        }
+
+        &.app-l-left-time {
+            margin-right: auto;
+            margin-left: 0px;
+        }
+    }
+    .app-l-notification{
+        border-left: 1px dashed #828282;
+        border-right: 1px dashed #828282;
+        padding: 0 21px;
+        height: 45px;
+        position: relative;
+
+        @include flexboxv2();
+        @include align-itemsv2(center);
+        @include justify-contentv2(center);
+
+        @media screen and(max-width: 1200px){
+            margin-left: auto;
+        }
+
+        @media screen and(max-width: 767px){
+            border-left: 0;
+            border-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .app-l-notification__btn{
+            position: relative;
+            cursor: pointer;
+            
+            i{
+                font-size: 21px;
+                color: $black;
+            }
+            .app-l-notification__count{
+                width: 17px;
+                height: 17px;
+                background: #F74134;
+                color: $white;
+                font-size: 11px;
+                font-weight: 700;
+                position: absolute;
+                top: -7px;
+                right: -5px;
+
+                @include border-radius-all(50%);
+                @include flexboxv2();
+                @include align-itemsv2(center);
+                @include justify-contentv2(center);
+            }
+        }
+
+        &.border-less {
+            border: none;
+        }
+    }
+    .app-l-user{
+        margin-left: 21px;
+        cursor: pointer;
+        position: relative;
+        
+        .app-l-user__drp{
+            @include flexboxv2();
+            @include align-itemsv2(center);
+        }
+        .app-l-user__avatar{
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            margin-right: 10px;
+
+            @include border-radius-all(50%);
+            @include flexboxv2();
+            @include align-itemsv2(center);
+            @include justify-contentv2(center);
+            @include flex-shrinkv2(0);
+
+            @media screen and(max-width: 767px){
+                margin-right: 0;
+            }
+            img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .app-l-user-name{
+            color: #000000;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: normal;
+
+            @include flex-shrinkv2(0);
+
+            @media screen and(max-width: 767px){
+                display: none;
+            }
+        }
+        .app-l-user__arrow{
+            font-size: 14px;
+            color: #000000;
+            margin-left: 10px;
+        }
+    }
+
+    &.app-l-mod-layout {
+        padding: 0;
+        background: #f8f9ff;
+
+        .app-l-header-left {
+            width: 100%;
+            padding: 13px 35px 13px;
+
+            @include flexboxv2();
+            @include justify-contentv2(flex-start);
+            @include align-itemsv2(center);
+
+            @media screen and (max-width: 991px) {
+                padding: 9px 35px 9px;
+            }
+        }
+        .app-l-header-right {
+            width: 486px;
+            padding: 22px 35px 20px;
+            background-color: $white;
+
+            @include flexboxv2();
+            @include flex-shrinkv2(0);
+            @include justify-contentv2(space-between);
+            @include align-itemsv2(center);
+
+            @media screen and (max-width: 991px) {
+                background-color: transparent;
+                width: auto;
+                padding: 18px 24px 16px;
+
+                @include justify-contentv2(flex-end);
+                @include flex-directionv2(row-reverse);
+            }
+
+            .app-l-notification {
+                @media screen and (max-width: 991px) {
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+}

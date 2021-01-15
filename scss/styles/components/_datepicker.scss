@@ -1,0 +1,47 @@
+.app-c-datepicker{
+    position: relative;
+
+    &:before{
+        content: "\e911";
+        font-family: $font-icons;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        font-size: 16px;
+        color: #000000;
+        line-height: normal;
+        pointer-events: none;
+    }
+    &:after{
+        content: "\e912";
+        font-family: $font-icons;
+        position: absolute;
+        top: 12px;
+        right: 0;
+        font-size: 12px;
+        color: #000000;
+        line-height: normal;
+        pointer-events: none;
+    }
+    .form-control{
+        padding-left: 28px;
+    }
+}
+
+.daterangepicker {
+    .drp-calendar{
+        .calendar-table{
+            table{
+                tbody{
+                    tr{
+                        td{
+                            &.active {
+                                background: $primary_color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

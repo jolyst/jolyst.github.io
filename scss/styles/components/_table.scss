@@ -1,0 +1,403 @@
+.app-c-table{
+    height: 100%; 
+
+    .dataTables_wrapper{
+        height: 100%;
+
+        .dataTables_scroll{
+            height: 100%;
+
+            @include flexboxv2();
+            @include flex-directionv2(column);
+
+            .dataTables_scrollHead{
+                border-bottom: none;
+
+                @include flex-shrinkv2(0);
+
+                .dataTables_scrollHeadInner{
+                    max-width: 100%;
+                }
+                table{
+                    max-width: 100%;
+                    width: 100% !important;
+
+                    tr{
+                        th{
+                            color: #999999;
+                            font-size: 12px;
+                            line-height: 14px;
+                            font-weight: 400;
+                            border-bottom: 1px solid rgba(#242056, 0.5);
+                        }
+                    }
+                }
+            }
+            .dataTables_scrollBody{
+                border-bottom: none;
+
+                table{
+                    width: 100% !important;
+                    
+                    tr{
+                        + tr{
+                            td{
+                                border-top: 1px dashed rgba(#000000,0.2);
+                            }
+                        }
+                        td{
+                            color: #333333;
+                            font-size: 14px;
+                            line-height: 21px;
+                            font-weight: 700;
+                            padding: 15px 15px;
+
+                            .app-l-kmph{
+                                font-weight: 400;
+                            }
+                            .app-l-driver-name{
+                                color: #999999;
+                                font-weight: 700;
+                            }
+                        }
+
+                        &:hover{
+                            td{
+                                background: #F1F3FC;
+                                color: #004D81;
+
+                                .app-l-driver-name{
+                                    color: #004D81;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.app-l-table__users {
+
+        min-height: 0;
+        max-height: 100%;
+
+        @include flexboxv2();
+        @include flex-directionv2(column);
+
+        table{
+            min-width: 800px;
+        }
+
+        .dataTables_wrapper{
+            min-height: 0;
+    
+            .dataTables_scroll{
+    
+                .dataTables_scrollHead{
+    
+                    table{
+                        width: 100% !important;
+
+                        tr{
+                            th{
+                                font-size: 14px;
+                                line-height: 15px;
+                                padding: 17px 15px;
+                            }
+                        }
+                    }
+                }
+
+                .dataTables_scrollBody{
+                    table{
+                        width: 100% !important;
+
+                        tr{
+                            &:hover{
+                                td {
+                                    .app-l-action-group {
+                                        .app-l-cell-action {
+                                            border-color: #004D81;
+                                            background-color: #F1F3FC;
+
+                                            i {
+                                                color: #004D81;
+                                            }
+
+                                            &:hover {
+                                                border-color: #004D81;
+                                                background-color: #004D81;
+
+                                                i {
+                                                    color: $white;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            td {
+                                &.app-l-grid-controls {
+                                    padding: 8px 15px 6px 15px;
+
+                                    .app-l-cell-action {
+                                        + .app-l-cell-action {
+                                            margin-left: 4px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.app-c-table--primary{
+        min-height: 0;
+        max-height: 100%;
+        width: 100%;
+
+        @include flexboxv2();
+        @include flex-directionv2(column);
+
+        table{
+             min-width: 800px;
+        }
+        
+        .dataTables_wrapper{
+            min-height: 0;
+    
+            .dataTables_scroll{
+    
+                .dataTables_scrollHead{
+    
+                    table{
+                        width: 100% !important;
+                        tr{
+                            th{
+                                font-size: 14px;
+                                line-height: 15px;
+                                padding: 17px 15px;
+                            }
+                        }
+                    }
+                }
+
+                .dataTables_scrollBody{
+                    table{
+                        width: 100% !important;
+                        tr{
+                           
+                            td {
+                                .app-l-action-group {
+                                    .app-l-cell-action {
+                                        
+
+                                        i {
+                                            color: #BFBFBF;;
+                                        }
+
+                                        &:hover {
+                                            border-color: #004D81;
+                                            background-color: #004D81;
+
+                                            i {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            td {
+                                &.app-l-grid-controls {
+                                    padding: 8px 15px 6px 15px;
+
+                                    .app-l-cell-action {
+                                        + .app-l-cell-action {
+                                            margin-left: 4px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.app-l-report-table {
+
+    min-height: 0;
+    max-height: 100%;
+    position: relative;
+    
+    @include flexboxv2();
+    @include flex-directionv2(column);
+    
+    table{
+        table-layout: fixed !important;
+        min-width: 800px;
+    }
+
+    .dataTables_wrapper{
+        min-height: 0;
+        height: 100%;
+
+        .dataTables_scroll{
+            height: 100%;
+
+            @include flexboxv2();
+            @include flex-directionv2(column);
+
+            .dataTables_scrollHead{
+                border-bottom: none;
+
+                @include flex-shrinkv2(0);
+                
+                table{
+
+                    tr{
+                        th{
+                            font-size: 14px;
+                            line-height: 15px;
+                            padding: 17px 15px;
+                        }
+                    }
+                }
+            }
+
+            .dataTables_scrollBody{
+                table{
+
+                    tr{
+                        + tr {
+                            td {
+                                border-top: 1px dashed rgba(#000000,0.2);
+                            }
+                        }
+
+                        td {
+                            color: #333333;
+                            font-size: 14px;
+                            line-height: 21px;
+                            font-weight: 700;
+                            padding: 15px 15px;
+
+                            .app-l-kmph{
+                                font-weight: 400;
+                            }
+                            .app-l-driver-name{
+                                color: #999999;
+                                font-weight: 700;
+                            }
+                        }
+
+                        &:hover{
+                            td {
+                                background: #F1F3FC;
+                                color: #004D81;
+
+                                .app-l-driver-name{
+                                    color: #004D81;
+                                }
+
+                                .app-l-action-group {
+                                    .app-l-cell-action {
+                                        border-color: #004D81;
+                                        background-color: #F1F3FC;
+
+                                        i {
+                                            color: #004D81;
+                                        }
+
+                                        &:hover {
+                                            border-color: #004D81;
+                                            background-color: #004D81;
+
+                                            i {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        td {
+                            &.app-l-grid-controls {
+                                padding: 8px 15px 6px 15px;
+
+                                .app-l-cell-action {
+                                    + .app-l-cell-action {
+                                        margin-left: 4px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .app-l-grid-right-load, .app-l-grid-left-load {
+        position: absolute;
+        height: calc(100% - 40.2px);
+        width: 59px;
+        cursor: pointer;
+        z-index: 2;
+
+        @include flexboxv2();
+        @include justify-contentv2(center);
+        @include align-itemsv2(Center);
+
+        &:hover {
+            span {
+                border-color: $primary_color;
+            }
+        }
+
+        > span {
+            height: 32px;
+            width: 32px;
+            border: solid 2px transparent;
+            background-color: $white;
+
+            @include border-radius-all(50%);
+            @include flexboxv2();
+            @include justify-contentv2(center);
+            @include align-itemsv2(Center);
+            @include transitionAll(border-color 0.3s ease-in-out);
+
+            > i {
+                font-size: 16px;
+                color: $primary_color;
+            }
+        }
+    }
+
+    .app-l-grid-right-load {
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: auto;
+
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 33%, rgba(255,255,255,1) 100%);
+    }
+
+    .app-l-grid-left-load {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 33%, rgba(255,255,255,0) 100%);
+    }
+}

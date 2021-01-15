@@ -1,0 +1,133 @@
+.app-c-dropdown{
+    background: $white;
+    padding: 10px 20px;
+    border: none;
+
+    @include boxShadow(0px 2px 10px rgba(0, 0, 0, 0.25));
+    @include border-radius-all(0);
+
+    &.app-l-dropdown__user{
+        width: 198px;
+        margin-top: 16px;
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li{
+                + li{
+                    border-top: 1px dashed rgba(#000000, 0.2);
+                }
+
+                a{
+                    padding: 11px 0;
+
+                    @include flexboxv2();
+                    @include align-itemsv2(center);
+
+                    i{
+                        width: 25px;
+                        margin-right: 8px;
+                        color: $black;
+                        font-size: 17px;
+
+                        @include flex-shrinkv2(0);
+                        @include transitionAll(color ease 0.2s);
+                    }
+                    span{
+                        color: #333333;
+                        font-weight: 400;
+                        font-size: 14px;
+
+                        @include transitionAll(color ease 0.2s);
+                    }
+
+                    &:hover{
+                        i, span{
+                            color: $primary_color;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+
+    &.app-l-dropdown__notification{
+        width: 328px;
+        margin-top: 16px;
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li{
+                + li{
+                    border-top: 1px dashed rgba(#000000, 0.2);
+                }
+                a{
+                    padding: 11px 0;
+
+                    @include flexboxv2();
+                    @include align-itemsv2(center);
+                    @include transitionAll(opacity ease 0.2s);
+
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                    .app-l-nt__icon{
+                        width: 40px;
+                        height: 40px;
+                        background: rgba($primary_color, 0.1);
+                        font-size: 18px;
+                        color: $black;
+                        margin-right: 17px;
+
+                        @include flexboxv2();
+                        @include align-itemsv2(center);
+                        @include justify-contentv2(center);
+                        @include flex-shrinkv2(0);
+                        @include align-selfv2(flex-start);
+                        @include border-radius-all(50%);
+                    }
+                    .app-l-nt__cnt{
+                        width: 100%;
+
+                        p{
+                            margin: 0;
+                            color: #333333;
+                            font-size: 13px;
+                            line-height: 19px;
+                            font-weight: 400;
+
+                            span{
+                                font-weight: 500;
+                            }
+                        }
+                        .app-l-nt__time{
+                            display: block;
+                            margin-top: 3px;
+                            color: #50B96D;
+                            font-size: 12px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+        .app-l-notification__load-more{
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-top: 1px dashed rgba(#000000, 0.2);
+
+            a{
+                color: $primary_color;
+                font-weight: 500;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+    }
+}

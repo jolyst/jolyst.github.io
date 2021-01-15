@@ -1,0 +1,10 @@
+
+// usage: @include position(absolute, $top: 1em, $left: 50%);
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

@@ -1,0 +1,4 @@
+@mixin currentview-vertical-align($element-height) {
+  margin-top: (($currentview-height - $element-height) / 2);
+  margin-bottom: (($currentview-height - $element-height) / 2);
+}

@@ -1,0 +1,85 @@
+/* Bootstrap framework file */
+//@import "vendor/bootstrap/bootstrap.min"; 
+@import "vendor/bootstrap/bootstrap";
+@import "vendor/data-table/data-table";
+@import "vendor/data-table/data-table-responsive";
+@import "vendor/data-table/data-table-row-order";
+@import "vendor/jquery.mCustomScrollbar/jquery.mCustomScrollbar";
+@import "vendor/datepicker/datepicker";
+
+
+/* Imports custom fonts */
+@import "styles/core/custom-fonts";
+
+/* Import font awesome */
+@import "styles/core/font-awesome";
+
+/* Import  Icons */
+@import "styles/core/icons";
+
+/* Theme */
+@import "styles/theme/theme";
+
+/* Import variables*/
+@import "styles/variables/variables";
+
+/* Mixins */
+@import "styles/mixins/position";
+@import "styles/mixins/centering";
+@import "styles/mixins/transitions";
+@import "styles/mixins/keyframe-animations";
+@import "styles/mixins/animation";
+@import "styles/mixins/full-cover";
+@import "styles/mixins/flexbox-v2";
+@import "styles/mixins/triangle";
+@import "styles/mixins/link-unstyled";
+@import "styles/mixins/background-color-opacity";
+@import "styles/mixins/prefixer";
+@import "styles/mixins/transform";
+@import "styles/mixins/linear-gradient";
+@import "styles/mixins/box-shadow";
+@import "styles/mixins/gradient-remove";
+@import "styles/mixins/truncate";
+@import "styles/mixins/border-radius";
+@import "styles/mixins/currentview-vertical-align";
+@import "styles/mixins/equal-distribution";
+@import "styles/mixins/hover";
+@import "styles/mixins/placeholder-color";
+@import "styles/mixins/background-size";
+@import "styles/mixins/gradient";
+@import "styles/mixins/box-size";
+
+
+/* Page Default settings */
+
+@import "styles/core/base";
+@import "styles/core/master-layout";
+
+/* Component */
+
+@import "styles/components/layout";
+@import "styles/components/switch";
+@import "styles/components/datepicker";
+@import "styles/components/form";
+@import "styles/components/button";
+@import "styles/components/group-nav";
+@import "styles/components/table";
+@import "styles/components/datepicker";
+@import "styles/components/checkbox";
+@import "styles/components/dropdown";
+@import "styles/components/toggle";
+
+
+/* Screen component*/
+@import "styles/screen-components/nav";
+@import "styles/screen-components/header";
+@import "styles/screen-components/all-vehicles";
+@import "styles/screen-components/vehicle";
+@import "styles/screen-components/users";
+@import "styles/screen-components/location";
+@import "styles/screen-components/notification";
+@import "styles/screen-components/login";
+@import "styles/screen-components/structure";
+
+/* Utilities */
+@import "styles/utilities/utilities";

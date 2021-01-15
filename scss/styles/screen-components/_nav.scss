@@ -1,0 +1,85 @@
+.app-l-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 126px;
+    height: 100%;
+    background: $primary_color;
+
+    @include flexboxv2();
+    @include flex-directionv2(column);
+
+    @media screen and(max-width: 1300px){
+        width: 86px;
+    }
+
+    .app-l-nav__toggle{
+        height: 77px;
+
+        .app-l-nav__toggle-btn{
+            height: 100%;
+            font-size: 22px;
+            color: $white;
+            background: none;
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 0;
+            cursor: pointer;
+
+            @include flexboxv2();
+            @include align-itemsv2(center);
+            @include justify-contentv2(center);
+            @include transition(color ease 0.2s);
+
+            &:hover{
+                color: rgba($white, 0.7);
+            }
+        }
+    }
+
+    .app-l-nav__list{
+        height: 100%;
+        overflow: auto;
+
+        ul{
+            li{
+                a{
+                    display: block;
+                    color: $white;
+                    text-align: center;
+                    padding: 20px 8px;
+
+                    @include transition(color ease 0.2s);
+
+                    i{
+                        display: block;
+                        font-size: 21px;
+                        margin-bottom: 6px;
+                    }
+                    span{
+                        display: block;
+                        line-height: normal;
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+
+                    &:hover{
+                        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#083f64+0,004d81+100 */
+                        background: #083f64; /* Old browsers */
+                        background: -moz-linear-gradient(left,  #083f64 0%, #004d81 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(left,  #083f64 0%,#004d81 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(to right,  #083f64 0%,#004d81 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#083f64', endColorstr='#004d81',GradientType=1 ); /* IE6-9 */
+                    }
+                }
+            }
+        }
+
+        .mCustomScrollBox {
+            .mCSB_container{
+                margin-right: 0;
+            }
+        }
+    }
+}

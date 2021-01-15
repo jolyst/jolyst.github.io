@@ -1,0 +1,361 @@
+
+:root {
+    --app-brand-primary: #9f85ff;
+    // --app-brand-primary: #700C16;
+    --app-brand-primary-dark: #5C0009;
+    --app-brand-primary-light: #9B555C;
+    --app-brand-primary-disable: #F1E7E8;
+    --app-brand-secondary: #F8F3F3;
+
+    --text-color: #342325;
+    --text-dark-medium: #6D6767;
+    --text-dark-normal: #9D999A;
+    --text-light-normal: #EAE0E1;
+    --text-light-medium: #F4F2F3;
+
+    --alert-primary-bg: #700c16;
+    --alert-secondary-bg: #700c16;
+
+    --container-border: #700c16;
+    --generic-border-color: #F4F2F3;
+    
+    --app-toggle-active-bg: #700c16;
+    --app-toggle-active-shadow: #F4F2F3;
+    --app-toggle-unchecked-shadow: #F4F2F3;
+    --app-checkbox-border: #700c16;
+    --app-checkbox-bg: #F4F2F3;
+    --app-checkbox-border-disable: #F4F2F3;
+    --app-l-toggle-check-focus: rgba(17, 25, 45, 0.1);
+    
+    --app-radio-border: #700c16;
+    --app-radio-bg: #F4F2F3;
+    --app-radio-border-disable: #F4F2F3;
+
+    --form-control-border: #700c16;
+    --form-control-active-border: #700c16;
+    --form-control-disable-border: #700c16;
+    --form-control-disable-background: #F4F2F3;
+
+    --grid-pagination-border: #700c16;
+    --grid-pagination-border-active: #700c16;
+    --grid-pagination-background-active: #700c16;
+    --grid-header-bg: #F4F2F3;
+    --grid-header-seperator: #F4F2F3;
+    --grid-focused-header-cell: #F4F2F3;
+    --grid-row-hover-bg: #F4F2F3;
+    --grid-field-icon: #700c16;
+    --grid-selected-row-border: #700c16;
+
+    --tooltip-background: #342325;
+    --tooltip-arrow-background: #342325;
+
+    --sidebar-logo-text: #700c16;
+    --sidebar-logo-text-alpha50: #700c16;
+    --list-option-hover-bg: #700c16;
+    --companies-dropdown-selection-bg: #F4F2F3;
+
+    --secondary-btn-disabled: #700c16;
+    --primary-btn-hover: #700c16;
+    --primary-btn-active-focus: #700c16;
+    --primary-btn-disabled: #700c16;
+
+    --data-card-border: #700c16;
+    --data-card-header-bg: #F4F2F3;
+    --dx-colorbox-border: #700c16;
+    --dx-colorbox-result-border: #342325;
+    --primary-shade-dimmed: #700c16;
+    --app-base-bg : #F4F2F3;
+    --logo-wrap-border : #700c16;
+    --progress-bar-bg-border : #700c16;
+    --theme-selected-border : #342325;
+
+    --app-l-drag-drop-border : #342325;
+    --app-l-drag-drop-hover-bg : #342325;
+    --notification-section-head-bg : #F4F2F3;
+    --app-primary-super-dark: #5f0a13;
+}
+
+@function color($color-name) {
+    @return var(--#{$color-name});
+}
+
+$app-brand-primary                  :color(app-brand-primary);
+// $app-brand-primary                  :#700C16;
+
+$app-brand-primary-dark             :color(app-brand-primary-dark);
+// $app-brand-primary-dark             :saturate(darken($app-brand-primary, 3.73%), 0.31);
+
+$app-brand-primary-light            :color(app-brand-primary-light);
+// $app-brand-primary-light            :lighten(desaturate($app-brand-primary, 51.48), 22.75%);
+
+$app-brand-primary-disable          :color(app-brand-primary-disable);
+// $app-brand-primary-disable          :lighten(desaturate($app-brand-primary, 54.33), 68.24%);
+
+$app-brand-secondary                :color(app-brand-secondary);
+// $app-brand-secondary                :lighten(desaturate($app-brand-primary, 54.33), 71.96%);
+
+
+// Text color
+
+$text-color                         :color(text-color);
+// $text-color                         :darken(desaturate($app-brand-primary, 61.10), 7.25%);
+$text-dark-extra :                       $text-color;
+
+$text-dark-medium                   :color(text-dark-medium);
+// $text-dark-medium                   :lighten(desaturate($app-brand-primary, 77.81), 17.25);
+
+$text-dark-normal                   :color(text-dark-normal);
+// $text-dark-normal                   :lighten(desaturate($app-brand-primary, 78.65), 36.47);
+
+$text-light-normal                  :color(text-light-normal);
+// $text-light-normal                  :lighten(desaturate($app-brand-primary, 61.41), 65.49);
+
+$text-light-medium                  :color(text-light-medium);
+// $text-light-medium                  :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+
+$text-color-light:                       #586587;
+$white:                                  #fff;
+$black:                                  #000;
+$cream:                                  #FAF7D2;
+$mustard:                                #FFD64F;
+$pear:                                   #C8DA3C;
+$gray:                                   #d1d5da;
+$app-tone:                               #700C16;
+$login-logo-seperator:                   #A9C2D9;
+$login-form-bg:                          #F0F2F7;
+$login-header:                           #342325;
+$onboard-screen-bg:                      #480D13;
+$onboard-form-label:                     #586587;
+$avatar-border:                          #E4E4E4;
+
+$generic-border-color               :color(generic-border-color);
+// $generic-border-color               :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+
+
+
+
+//Neutrals color palette
+
+$neutrals-color1 : #233B58;
+$neutrals-color2 : #586587;
+$neutrals-color3 : #E2E6EF;
+$neutrals-color4 : #F0F2F7;
+
+$default-green   : #44AB66;
+$default-red     : #EB5757;
+$default-red-light : #FFF6F6;
+
+// themes color
+
+$theme1 : #7C3A87;
+$theme2 : #7DCCF1;
+$theme3 : #E7AD56;
+$theme4 : #72B661;
+
+//checkbox-theme
+
+$app-checkbox-border            :color(app-checkbox-border);
+// $app-checkbox-border            :lighten(desaturate($app-brand-primary, 78.65), 36.47);
+
+$app-checkbox-bg                :color(app-checkbox-bg);
+// $app-checkbox-bg                :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+
+$app-checkbox-border-disable    :color(app-checkbox-border-disable);
+// $app-checkbox-border-disable    :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+
+$app-l-toggle-check-focus       :color(app-l-toggle-check-focus);
+// $app-l-toggle-check-focus       :rgba(17, 25, 45, 0.1);
+
+
+// Radio Button
+
+$app-radio-border               :color(app-radio-border);
+// $app-radio-border               :lighten(desaturate($app-brand-primary, 78.65), 36.47);
+$app-radio-bg                   :color(app-radio-bg);
+// $app-radio-bg                   :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+$app-radio-border-disable       :color(app-radio-border-disable);
+// $app-radio-border-disable       :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+
+
+//form-control
+
+$form-control-border                :color(form-control-border);
+// $form-control-border                :lighten(desaturate($app-brand-primary, 78.65), 36.47);
+$form-control-active-border         :color(form-control-active-border);
+// $form-control-active-border         :$app-brand-primary;
+$form-control-disable-border        :color(form-control-disable-border);
+// $form-control-disable-border        :lighten(desaturate($app-brand-primary, 78.65), 36.47);
+$form-control-disable-background    :color(form-control-disable-background);
+// $form-control-disable-background    :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+$form-error: $default-red;
+$form-error-background: $default-red-light;
+$validation-red: #ff0000;
+
+// table
+
+$table-border : #DBDFEA;
+$grid-pagination-border             :color(grid-pagination-border);
+// $grid-pagination-border             :lighten(desaturate($app-brand-primary, 61.41), 65.49);
+$grid-pagination-border-active      :color(grid-pagination-border-active);
+// $grid-pagination-border-active      :lighten(desaturate($app-brand-primary, 77.81), 17.25);
+$grid-pagination-background-active  :color(grid-pagination-background-active);
+// $grid-pagination-background-active  :lighten(desaturate($app-brand-primary, 78.65), 36.47);
+
+//Tooltip
+
+$tooltip-background         :color(tooltip-background);
+// $tooltip-background         :darken(desaturate($app-brand-primary, 61.10), 7.25%);
+$tooltip-arrow-background   :color(tooltip-arrow-background);
+// $tooltip-arrow-background   :darken(desaturate($app-brand-primary, 61.10), 7.25%);
+
+//Toggle Button
+
+$app-toggle-bg: #E2E6EF;
+$app-toggle-active-bg :color(app-toggle-active-bg);
+// $app-toggle-active-bg : $app-brand-primary;
+$app-toggle-active-shadow :color(app-toggle-active-shadow);
+// $app-toggle-active-bg : rgba($app-toggle-active-bg, 0.35);
+$app-toggle-unchecked-shadow :color(app-toggle-unchecked-shadow);
+// $app-toggle-active-bg : rgba($app-brand-primary, 0.15);
+$app-toggle-inactive-border : #EAE0E1;
+
+// Card
+$app-card-border:                       #e6e5e5;
+$app-card-header:                       #f9fbff;
+$app-card-grey :                        #FCFCFC;
+$data-card-border                       :color(data-card-border);
+// $data-card-border                       :lighten(desaturate($app-brand-primary, 61.41), 65.49);
+$data-card-header-bg                    :color(data-card-header-bg);
+// $data-card-header-bg                    :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+
+//Alert
+$app-alert-success:                     #f0fff4;
+$app-alert-danger:                      #f8eced;
+$app-alert-warning:                     #fffbf0;
+$app-alert-info:                        #eff8ff;
+$app-alert-light:                       #f6f6f6;
+$app-alert-dark:                        #eaeaea;
+
+//General Colors
+$heading-color :                         #ff9200;
+$menu-bg-color:                          #444444;
+$light-blue :                            #4c71f0;
+$dark-green:                             #5cb837;
+$dark-red:                               #ff5630;
+$dark-yellow:                            #ffc84c;
+$dark-blue:                              #1facfe;
+$light-grey:                             #eee;
+$dark-grey:                              #a4a4a4;
+
+// Button
+
+$secondary-btn-disabled         :color(secondary-btn-disabled);
+// $secondary-btn-disabled         :lighten(desaturate($app-brand-primary, 61.41), 65.49);
+$primary-btn-hover              :color(primary-btn-hover);
+// $primary-btn-hover              :lighten($app-brand-primary, 8%);
+$primary-btn-active-focus       :color(primary-btn-active-focus);
+// $primary-btn-active-focus       :lighten($app-brand-primary, 12%);
+$primary-btn-disabled           :color(primary-btn-disabled);
+// $primary-btn-disabled           :lighten($app-brand-primary, 16%);
+
+// App Colors               
+
+$base-bg                        : #F0F2F7;
+$grid-header-bg                 :color(grid-header-bg);
+// $grid-header-bg                 :rgba(lighten(desaturate($app-brand-primary, 72.31), 70.98), 0.5);
+$grid-header-seperator          :color(grid-header-seperator);
+// $grid-header-seperator          :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+$tab-header-bg                  : #FBFBFE;
+$onboard-bg                     : #E0E0E0;
+$onboard-form-header            : #384155;
+$grid-row-vertical-border       : #F0F2F7;
+$card-shadow                    : #E3E3E3;
+$column-chooser-bg              : $text-light-medium;
+$select-dropdown-item-bg        : $app-brand-secondary;
+$select-dropdown-item-seperator : $text-light-normal;
+$select-dropdown-item-text      : $app-brand-primary;
+$select-dropdown-item-select-bg : $app-brand-primary;
+$select-dropdown-item-border    : $text-light-normal;
+$dx-checkbox-active-border      : $app-brand-primary;
+$dx-textfield-active-border     : $app-brand-primary;
+$filter-remove-btn-bg           : $app-brand-secondary;
+$filter-remove-btn-text         : $app-brand-primary;
+$filter-editable-condition-bg   : $app-brand-primary-light;
+$filter-condition-bg            : $app-brand-secondary;
+$filter-condition-text          : $app-brand-primary;
+$generic-dropdown-border        : $text-dark-normal;
+$field-focus-border             : $app-brand-primary;
+$unfocussed-field-border        : $text-dark-normal;
+$active-checkbox-bg             : $app-brand-primary;
+$sidebar-logo-text-alpha50      :color(sidebar-logo-text-alpha50);
+$sidebar-logo-text              :color(sidebar-logo-text);
+// $sidebar-logo-text              :lighten(desaturate($app-brand-primary, 54.33), 68.24%);
+$list-option-hover-bg           :color(list-option-hover-bg);
+// $list-option-hover-bg           :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+$companies-dropdown-selection-bg:color(companies-dropdown-selection-bg);
+// $companies-dropdown-selection-bg: lighten(desaturate($app-brand-primary, 72.31), 70.98);
+$list-option-hover-text         : $app-brand-primary;
+$popover-border                 : #EAE0E1;
+$tag-chip-bg                    : #F2F2F2;
+$tag-close-bg                   : $app-brand-primary;
+$modal-close-color              : #384155;
+$success-toast                  : $default-green;
+$success-toast-bg               : #F3FFF7;
+$warning-toast                  : #FE951A;
+$warning-toast-bg               : #FFF8EF;
+$error-toast                    : #EB5757;
+$error-toast-bg                 : #FFF6F6;
+$toast-close                    : #DBDFEA;
+$tab-focus-text                 : $app-brand-primary-light;
+$active-checkbox-label          : $app-brand-primary;
+
+$container-border               :color(container-border);
+// $container-border               :lighten($unfocussed-field-border, 20%);
+
+$grid-field-icon                :color(grid-field-icon);
+// $grid-field-icon                :darken($form-control-border, 5%);
+
+$grid-selected-row-border       :color(grid-selected-row-border);
+// $grid-selected-row-border       :darken($generic-border-color, 10%);
+
+$grid-focused-header-cell            :color(grid-focused-header-cell);
+// $grid-focused-header-cell            :rgba($app-brand-primary, 0.75);
+
+$grid-row-hover-bg              :color(grid-row-hover-bg);
+// $grid-row-hover-bg              :rgba($text-light-medium, 0.3);
+
+$tasks-border                   :color(text-light-normal);
+// $tasks-border                   :lighten(desaturate($app-brand-primary, 61.41), 65.49);
+
+$primary-shade-dimmed           :color(primary-shade-dimmed);
+// $primary-shade-dimmed           :lighten($app-brand-primary, 10%);
+
+$app-base-bg                    :color(app-base-bg);
+// $app-base-bg                    :lighten(desaturate($app-brand-primary, 72.31), 70.98);
+
+$logo-wrap-border               :color(logo-wrap-border);
+// $logo-wrap-border               :lighten(desaturate($app-brand-primary, 61.41), 65.49);
+
+$progress-bar-bg-border         :color(progress-bar-bg-border);
+// $progress-bar-bg-border         :lighten(desaturate($app-brand-primary, 61.41), 65.49);
+
+$theme-selected-border          :color(theme-selected-border);
+// $theme-selected-border          :darken(desaturate($app-brand-primary, 61.10), 7.25%);
+
+$dx-colorbox-border             :color(dx-colorbox-border);
+// $dx-colorbox-border             :lighten(desaturate($app-brand-primary, 78.65), 36.47);
+
+$dx-colorbox-result-border      :color(dx-colorbox-result-border);
+// $dx-colorbox-result-border      :darken(desaturate($app-brand-primary, 61.10), 7.25%);
+
+$app-l-drag-drop-border         :color(app-l-drag-drop-border);
+// $app-l-drag-drop-border         :$app-brand-primary;
+
+$app-l-drag-drop-hover-bg         :color(app-l-drag-drop-hover-bg);
+// $app-l-drag-drop-hover-bg         :$app-brand-primary;
+
+$notification-section-head-bg   :color(notification-section-head-bg);
+// $notification-section-head-bg   :$text-light-medium;
+
+$app-primary-super-dark         :color(app-primary-super-dark);
+// $app-primary-super-dark         :#5f0a13;

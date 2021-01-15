@@ -1,0 +1,17 @@
+@mixin equal-distribution() {
+    @include display-flex();
+    @include flex-flow(row, nowrap);
+    @include justify-content(space-between);
+    @include align-items(stretch);
+
+    > [class*="--item"] {
+        @include flex-grow(1);
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    // > [class*="--item"]:not(last-child) {
+    //     margin-left: 2px;
+    //     margin-right: 2px;
+    // }
+}

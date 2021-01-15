@@ -1,0 +1,94 @@
+$app-text-color-dark:                    #091e41;
+$app-text-color-light:                   #5e6c84;
+
+.form-control {
+    color: #333333;
+    font-size: 14px;
+    line-height: 16px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding-left: 0;
+    outline: none;
+    background: none;
+
+    @include border-radius-all(0);
+    @include noShadow();
+
+    &:focus {
+        border-color: #000000;
+        background: none;
+
+        @include noShadow();
+    }
+}
+
+.app-l-form-label-value {
+    position: relative;
+    margin: 8px 0px;
+
+    .app-l-form-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: $app-text-color-light;
+        line-height: normal;
+        margin: 0 0 6px 0;
+    }
+
+    .app-l-form-data {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: $app-text-color-dark;
+        line-height: 21px;
+    }
+}
+
+.app-l-input-form-group {
+    position: relative;
+
+    .app-l-form-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        color: $app-text-color-light;
+        line-height: normal;
+        margin: 0 0 6px 0;
+    }
+
+    .app-l-form-control {
+        padding: 5px 15px 5px 0px;
+        height: 42px;
+        font-size: $text-lg;
+        border: none;
+        border-bottom: 2px solid $generic-border-color;
+        color: #091e41;
+      
+        @include transition(border ease 0.3s, color ease 0.3s, box-shadow ease 0.3s);
+        @include border-radius-all(0px);
+
+        &:-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #b9b9b9;
+        }
+        &:-moz-placeholder { /* Firefox 19+ */
+            color: #b9b9b9;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: #b9b9b9;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: #b9b9b9;
+        }
+    }
+}
+
+.form-group{
+    .app-l-form--label{
+        color: #999999; 
+        font-size: 14px;
+        font-weight: 400;
+        display: block;
+        line-height: normal;
+        margin: 0;
+    }
+}

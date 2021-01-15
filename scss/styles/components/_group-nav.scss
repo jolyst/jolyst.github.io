@@ -1,0 +1,41 @@
+.app-c-group-nav{
+    ul{
+        margin: 0;
+        padding: 0;
+        border: 1px solid rgba(0, 77, 129, 0.19);
+        background: #FFFFFF;
+        padding: 3px;
+
+        @include inline-flexv2();
+        @include border-radius-all(4px);
+
+        li{
+            a{
+                display: block;
+                font-size: 14px;
+                font-weight: 400;
+                padding: 9px 16px;
+                color: $primary_color;
+                line-height: normal;
+
+                @include transitionAll(color ease 0.2s, background ease 0.2s);
+                @include border-radius-all(5px);
+            }
+
+            + li{
+                margin-left: 3px;
+            }
+            &:hover{
+                a{
+                    background: lighten($black, 95%);
+                }
+            }
+            &.active{
+                a{
+                    background: $primary_color;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

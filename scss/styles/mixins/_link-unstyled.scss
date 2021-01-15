@@ -1,0 +1,9 @@
+@mixin link-unstyled {
+    text-decoration: none !important;
+    outline: none !important;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none !important;
+        outline: none !important;
+    }
+}

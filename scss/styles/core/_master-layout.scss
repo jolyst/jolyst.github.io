@@ -1,0 +1,57 @@
+.app-c-container--lg{
+	max-width: 1591px;
+	margin: 0 auto;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	@media screen and (max-width: 767px){
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+.app-c-container--sm{
+	max-width: 1371px;
+	margin: 0 auto;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	@media screen and (max-width: 767px){
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+.app-c-container--xs{
+	max-width: 1004px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin: 0 auto;
+
+	@media screen and (max-width: 767px){
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+.app-l-wrapper{
+	height: 100vh;
+	padding-left: 126px;
+
+	@include flexboxv2();
+	@include flex-directionv2(column); 
+
+	@media screen and(max-width: 1300px){
+        padding-left: 86px;
+    }
+}
+
+.app-l-content{
+	background: #f8f9ff;
+	height: 100%;
+	padding: 5px;
+	min-height: 0;
+	overflow: auto;
+
+	&.no-padding {
+		padding: 0;
+	}
+}

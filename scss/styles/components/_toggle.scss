@@ -1,0 +1,56 @@
+// Switch
+.app-c-toggle{
+	display: inline-block;
+
+	label{
+		margin: 0;
+		padding: 0;
+		position: relative;
+		display: block;
+		line-height: normal;
+		cursor: pointer;
+
+		.app-c-toggle--icon{
+			width: 50px;
+			height: 28px;
+			margin: auto;
+			background: $app-toggle-bg;
+			position: relative;
+			display: block;
+
+			@include border-radius-all(15px);
+			@include transitionAll(background ease 0.2s, transform ease 0.2s, box-shadow ease 0.2s, left ease 0.2s);
+
+			&:before{
+				content: '';
+				width: 26px;
+				height: 26px;
+				background: $white;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 1px;
+				bottom: 0;
+				margin: auto;
+
+				@include boxShadow(1px 1px 4px rgba(57, 60, 59, 0.15696));
+				@include transitionAll(left ease 0.2s);
+				@include border-radius-all(50%);
+			}
+		}
+		
+		input{
+			display: none;
+
+			&[type="checkbox"]:checked {
+				+ .app-c-toggle--icon{
+					background: $app-toggle-active-bg;
+
+					&:before{
+						left: calc(100% - 27px);
+					}
+				}
+			}
+		}
+	}
+}

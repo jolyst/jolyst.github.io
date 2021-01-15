@@ -1,0 +1,126 @@
+//General checkbox
+//----------------------------------------------------
+
+$generic-border-color       :#d5d9df;
+$app-brand-checkbox         :#219653;
+$fontawesome-icons          :'Font Awesome 5 Free';
+$app-icons                  :'port-client';
+
+.app-c-checkbox {
+	display: block;
+	line-height: normal;
+
+	& + * {
+		margin-left: 10px;
+	}
+	&.app-c-checkbox--inline {
+		display: inline-block;
+		& + * {
+			margin-left: 10px;
+		}
+	}
+
+	&.app-c-checkbox--align-in-form {
+		@media (min-width: 480) {
+			margin-top: 45px;
+		}
+	}
+	&.disabled {
+		> label {
+			cursor: default;
+		}
+		.app-c-checkbox-icon {
+			background: $generic-border-color;
+		}
+	}
+}
+
+.app-c-checkbox > label {
+	position: relative;
+	min-height: 18px;
+	vertical-align: top;
+	margin: 0;
+	cursor: pointer;
+	line-height: 13px;
+
+	@include inline-flexv2();
+	@include align-itemsv2(flex-start);
+
+	.app-c-checkbox-icon {
+		width: 18px;
+		height: 18px;
+		border: 2px solid $generic-border-color;
+		background: $white;
+		cursor: pointer;
+		z-index: 1;
+		font-family: $fontawesome-icons;
+		position: relative;
+
+		@include transitionAll(background-color ease 0.2s);
+		@include flex-shrinkv2(0);
+		@include border-radius-all(3px);
+		@include flexboxv2();
+		@include align-itemsv2(center);
+		@include justify-contentv2(center);
+
+		&::before {
+			content: "\e90f";
+			font-family: $app-icons;
+			font-size: 10px;
+			color: $white;
+			line-height: normal;  
+
+			opacity: 0;
+			filter:alpha(opacity=0);
+	
+			text-align: center;
+			font-weight: 900;
+
+			@include transitionAll(opacity ease 0.2s, transform ease 0.2s);
+		}
+	}
+	.app-c-checkbox-label {
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 6px;
+		padding-top: 2px;
+
+		@include align-selfv2(center);
+	}
+
+	> input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		opacity: 0;
+        z-index: 1;
+		width: 15px;
+		height: 15px;
+
+		&[type="checkbox"]:checked + .app-c-checkbox-icon {
+			background: $white;
+			border-color: $app-brand-checkbox;
+			
+			&::before{
+				opacity:1;
+                filter: alpha(opacity=100);
+                color: $app-brand-checkbox;
+
+				@include transform(scale(1));
+			}
+		}
+
+		&[type="checkbox"]:checked {
+			&[disabled] + span {
+				opacity: 0.3;
+			}
+		}
+
+		&[disabled] + span {
+			opacity: 0.3;
+			cursor: not-allowed;
+		}
+	}
+
+}

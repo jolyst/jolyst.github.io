@@ -1,0 +1,25 @@
+
+@mixin noShadow{
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-ms-box-shadow: none !important;
+	-o-box-shadow: none !important;
+}
+
+
+@mixin boxShadow($shadow...){
+	box-shadow: $shadow;
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-ms-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+}
+
+@mixin boxShadowInside($shadow...){
+	box-shadow: $shadow;
+	-moz-box-shadow:    inset $shadow;
+	-webkit-box-shadow: inset $shadow;
+	-ms-box-shadow: inset $shadow;
+	-o-box-shadow: inset $shadow;
+}
