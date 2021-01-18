@@ -64,7 +64,7 @@
     --dx-colorbox-border: #700c16;
     --dx-colorbox-result-border: #342325;
     --primary-shade-dimmed: #700c16;
-    --app-base-bg : #F4F2F3;
+    --app-base-bg : #e0e0e0;
     --logo-wrap-border : #700c16;
     --progress-bar-bg-border : #700c16;
     --theme-selected-border : #342325;
@@ -260,7 +260,7 @@ $primary-btn-disabled           :color(primary-btn-disabled);
 
 // App Colors               
 
-$base-bg                        : #F0F2F7;
+$base-bg                        : #e0e0e0;
 $grid-header-bg                 :color(grid-header-bg);
 // $grid-header-bg                 :rgba(lighten(desaturate($app-brand-primary, 72.31), 70.98), 0.5);
 $grid-header-seperator          :color(grid-header-seperator);
