@@ -20235,8 +20235,11 @@ ol, li {
 }
 
 .app-c-checkbox {
-  display: block;
-  line-height: normal;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 .app-c-checkbox + * {
   margin-left: 10px;
@@ -20256,13 +20259,11 @@ ol, li {
   cursor: default;
 }
 .app-c-checkbox.disabled .app-c-checkbox-icon {
-  background: #d5d9df;
+  background: var(--app-checkbox-border);
 }
 
 .app-c-checkbox > label {
   position: relative;
-  min-height: 18px;
-  vertical-align: top;
   margin: 0;
   cursor: pointer;
   line-height: 13px;
@@ -20277,29 +20278,84 @@ ol, li {
   -moz-align-items: flex-start;
   align-items: flex-start;
 }
-.app-c-checkbox > label .app-c-checkbox-icon {
+.app-c-checkbox > label > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  margin: 0;
+  opacity: 0;
+  z-index: 1;
+  width: 1px;
+  height: 1px;
+  cursor: pointer;
+}
+.app-c-checkbox > label > input[type=checkbox]:checked + .app-c-checkbox-icon {
+  background: var(--app-brand-primary);
+  border-color: var(--app-brand-primary-dark);
+}
+.app-c-checkbox > label > input[type=checkbox]:checked + .app-c-checkbox-icon::before {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.app-c-checkbox > label > input[type=checkbox]:indeterminate + .app-c-checkbox-icon:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--app-brand-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 1;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+.app-c-checkbox > label > input[disabled] + .app-c-checkbox-icon {
+  cursor: not-allowed;
+  border-color: transparent;
+  background: var(--text-light-medium);
+}
+.app-c-checkbox > label > input[type=checkbox]:checked[disabled] + .app-c-checkbox-icon {
+  background: var(--app-brand-primary);
+  border-color: var(--app-brand-primary-dark);
+  opacity: 0.5;
+}
+.app-c-checkbox > label > input[type=checkbox]:focus + .app-c-checkbox-icon {
+  box-shadow: 0px 0px 0px 5px var(--app-l-toggle-check-focus);
+  -webkit-box-shadow: 0px 0px 0px 5px var(--app-l-toggle-check-focus);
+  -moz-box-shadow: 0px 0px 0px 5px var(--app-l-toggle-check-focus);
+  -ms-box-shadow: 0px 0px 0px 5px var(--app-l-toggle-check-focus);
+  -o-box-shadow: 0px 0px 0px 5px var(--app-l-toggle-check-focus);
+}
+.app-c-checkbox > label.reversed {
+  -webkit-box-direction: reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.app-c-checkbox > label.reversed .app-c-checkbox-label {
+  padding-left: 0px;
+  padding-right: 6px;
+}
+
+.app-c-checkbox-icon {
   width: 18px;
   height: 18px;
-  border: 2px solid #d5d9df;
-  background: #ffffff;
-  cursor: pointer;
-  z-index: 1;
-  font-family: "Font Awesome 5 Free";
+  border: 1px solid var(--app-checkbox-border);
   position: relative;
-  transition: background-color ease 0.2s;
-  -webkit-transition: background-color ease 0.2s;
-  -moz-transition: background-color ease 0.2s;
-  -ms-transition: background-color ease 0.2s;
-  -o-transition: background-color ease 0.2s;
-  -webkit-flex-shrink: 0;
-  -moz-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  background: var(--app-checkbox-bg);
+  padding-top: 1px;
+  -webkit-transition: unfoldTransition(background ease 0.2s), unfoldTransition(border ease 0.2s), unfoldTransition(box-shadow ease 0.2s);
+  transition: unfoldTransition(background ease 0.2s), unfoldTransition(border ease 0.2s), unfoldTransition(box-shadow ease 0.2s);
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -20315,63 +20371,56 @@ ol, li {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  -webkit-align-self: flex-start;
+  -moz-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
-.app-c-checkbox > label .app-c-checkbox-icon::before {
+.app-c-checkbox-icon::before {
   content: "";
   font-family: "port-client";
-  font-size: 10px;
+  font-size: 11px;
   color: #ffffff;
-  line-height: normal;
+  display: block;
   opacity: 0;
   filter: alpha(opacity=0);
-  text-align: center;
-  font-weight: 900;
-  transition: opacity ease 0.2s, transform ease 0.2s;
-  -webkit-transition: opacity ease 0.2s, transform ease 0.2s;
-  -moz-transition: opacity ease 0.2s, transform ease 0.2s;
-  -ms-transition: opacity ease 0.2s, transform ease 0.2s;
-  -o-transition: opacity ease 0.2s, transform ease 0.2s;
+  -webkit-transition: unfoldTransition(opacity ease 0.2s), unfoldTransition(transform ease 0.2s);
+  transition: unfoldTransition(opacity ease 0.2s), unfoldTransition(transform ease 0.2s);
 }
-.app-c-checkbox > label .app-c-checkbox-label {
-  display: inline-block;
-  vertical-align: middle;
+
+.app-c-checkbox-label {
   padding-left: 6px;
   padding-top: 2px;
-  -webkit-align-self: center;
-  -moz-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
+  color: #3B4458;
+  font-size: 13px;
+  line-height: 14px;
+  font-weight: 400;
 }
-.app-c-checkbox > label > input {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.app-c-checkbox > .app-c-checkbox-content {
+  position: relative;
   margin: 0;
-  opacity: 0;
-  z-index: 1;
-  width: 15px;
-  height: 15px;
-}
-.app-c-checkbox > label > input[type=checkbox]:checked + .app-c-checkbox-icon {
-  background: #ffffff;
-  border-color: #219653;
-}
-.app-c-checkbox > label > input[type=checkbox]:checked + .app-c-checkbox-icon::before {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  color: #219653;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-}
-.app-c-checkbox > label > input[type=checkbox]:checked[disabled] + span {
-  opacity: 0.3;
-}
-.app-c-checkbox > label > input[disabled] + span {
-  opacity: 0.3;
-  cursor: not-allowed;
+  cursor: pointer;
+  line-height: 13px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
 }
 
 .app-c-dropdown {
@@ -24350,6 +24399,7 @@ h1, h2, h3, h4, h5, h6, p, label {
   height: 100%;
   max-height: 100%;
   min-height: 0;
+  background: #e0e0e0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -24419,12 +24469,18 @@ h1, h2, h3, h4, h5, h6, p, label {
 .app-l-new-item-entry > form > input + .app-c-btn {
   margin-left: 16px;
 }
-
+.app-l-new-item-entry > form > input.form-control {
+  color: var(--text-color);
+  font-weight: 500;
+}
 .app-l-list-container {
   width: 100%;
   min-height: 0;
   max-height: 100%;
   border: solid 1px #d1d1d1;
+  border-radius: 50px;
+  background: #e0e0e0;
+  padding-bottom: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -24446,6 +24502,11 @@ h1, h2, h3, h4, h5, h6, p, label {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  -webkit-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  -moz-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  -ms-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  -o-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 .app-l-list-container .app-l-list-title {
   width: 100%;
@@ -24519,6 +24580,11 @@ h1, h2, h3, h4, h5, h6, p, label {
 }
 .app-l-list-container .app-l-list .app-l-list-item > .app-c-checkbox {
   width: 100%;
+}
+.app-l-list-container .app-l-list .app-l-list-item > .app-c-checkbox .app-c-checkbox-label {
+  color: var(--text-color);
+  font-weight: 500;
+  letter-spacing: 0.4px;
 }
 
 .app-l-color-picker {
